@@ -12,10 +12,10 @@ class Book:
 
     
     def set_page_count(self, page_count):
-        if not isinstance(page_count, int):
-            print("page_count must be an integer")
-        else:
+        if isinstance(page_count, int):
             self._page_count = page_count
+        else:
+            print("page_count must be an integer")
     page_count = property(get_page_count, set_page_count,)
     def turn_page(self):
         print("Flipping the page...wow, you read fast!")
